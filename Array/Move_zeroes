@@ -1,0 +1,16 @@
+class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {
+        int n = nums.size();
+        int j=0;
+        for(int i=0; i<n; i++){
+            if(nums[i] != 0){
+                nums[j] = nums[i];// we can just skip the 9th line and write
+                j++;              // nums[j++]=nums[i] in 8th line
+            }
+        }
+        for(; j<n; j++){ // fill 0 in remaining indexes, see the loop carefully.
+            nums[j] = 0;
+        }
+    }
+};
